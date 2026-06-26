@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">MarketPlace</string>
+
+    <!-- Product list -->
+    <string name="products">Products</string>
+    <string name="categories">Categories</string>
+    <string name="category_all">All</string>
+    <string name="empty_no_products_found_title">No products found</string>
+    <string name="empty_no_products_found_message">Try another category.</string>
+    <string name="empty_no_products_title">No products yet</string>
+    <string name="empty_no_products_message">Check back later or pull to refresh.</string>
+    <string name="error_load_products">Couldn\'t load products. Check your connection and try again.</string>
+
+    <!-- Flash deals -->
+    <string name="flash_deals">Flash Deals</string>
+    <string name="flash_deals_subtitle">Limited time offers</string>
+    <string name="view_all">View All</string>
+    <string name="deal_ends_in">Deal ends in</string>
+    <string name="empty_no_flash_deals_title">No flash deals</string>
+    <string name="empty_no_flash_deals_message">Check back later for limited-time offers.</string>
+
+    <!-- Countdown labels -->
+    <string name="countdown_days">DAYS</string>
+    <string name="countdown_hours">HRS</string>
+    <string name="countdown_minutes">MINS</string>
+    <string name="countdown_seconds">SECS</string>
+
+    <!-- Product detail -->
+    <string name="share">Share</string>
+    <string name="share_product_chooser_title">Share product</string>
+    <string name="product_link_shared">Product link shared</string>
+    <string name="added_to_cart">Added to cart</string>
+    <string name="join_pool">Join Pool</string>
+    <string name="joined">Joined</string>
+    <string name="joined_checked">Joined ✓</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="product_not_found">Product not found</string>
+    <string name="you_save">You save $%1$.2f</string>
+    <string name="product_share_text">%1$s - $%2$.2f</string>
+
+    <!-- Formats -->
+    <string name="price_format">$%1$.2f</string>
+    <string name="discount_percent_off">%1$d%% OFF</string>
+    <string name="stock_availability_format">%1$d - %2$s</string>
+</resources>
