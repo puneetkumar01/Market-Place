@@ -1,4 +1,6 @@
-package com.puneet.marketplace.domain.model
+package com.puneet.marketplace.domain.extensions
+
+import com.puneet.marketplace.domain.model.Product
 
 fun Product.hasDiscount(): Boolean = discountPercentage > 0
 

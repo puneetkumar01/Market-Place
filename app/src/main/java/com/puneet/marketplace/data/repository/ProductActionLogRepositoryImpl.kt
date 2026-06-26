@@ -4,11 +4,11 @@ import com.puneet.marketplace.data.local.dao.ProductActionLogDao
 import com.puneet.marketplace.data.local.entity.ProductActionLogEntity
 import com.puneet.marketplace.data.local.entity.ProductActionType
 import com.puneet.marketplace.data.mapper.toAnalyticsDto
-import com.puneet.marketplace.data.remote.AnalyticsEndpoints
+import com.puneet.marketplace.data.remote.utils.AnalyticsEndpoints
 import com.puneet.marketplace.data.remote.api.AnalyticsApiService
 import com.puneet.marketplace.data.remote.dto.AnalyticsBatchRequestDto
 import com.puneet.marketplace.domain.model.Product
-import com.puneet.marketplace.domain.model.priceAfterDiscount
+import com.puneet.marketplace.domain.extensions.priceAfterDiscount
 import com.puneet.marketplace.domain.repository.ProductActionLogRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

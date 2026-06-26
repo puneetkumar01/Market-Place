@@ -44,10 +44,10 @@ import coil.request.ImageRequest
 import com.puneet.marketplace.R
 import com.puneet.marketplace.domain.model.CountdownState
 import com.puneet.marketplace.domain.model.Product
-import com.puneet.marketplace.domain.model.displayImage
-import com.puneet.marketplace.domain.model.hasDiscount
-import com.puneet.marketplace.domain.model.priceAfterDiscount
-import com.puneet.marketplace.domain.model.savingsAmount
+import com.puneet.marketplace.domain.extensions.displayImage
+import com.puneet.marketplace.domain.extensions.hasDiscount
+import com.puneet.marketplace.domain.extensions.priceAfterDiscount
+import com.puneet.marketplace.domain.extensions.savingsAmount
 import com.puneet.marketplace.presentation.ui.components.CountdownTimer
 import com.puneet.marketplace.presentation.ui.components.common.DiscountBadge
 import com.puneet.marketplace.presentation.ui.components.common.LoadingIndicator

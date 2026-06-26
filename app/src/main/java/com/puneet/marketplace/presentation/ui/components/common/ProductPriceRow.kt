@@ -16,8 +16,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.puneet.marketplace.R
 import com.puneet.marketplace.domain.model.Product
-import com.puneet.marketplace.domain.model.hasDiscount
-import com.puneet.marketplace.domain.model.priceAfterDiscount
+import com.puneet.marketplace.domain.extensions.hasDiscount
+import com.puneet.marketplace.domain.extensions.priceAfterDiscount
 import com.puneet.marketplace.ui.theme.AppColors
 import com.puneet.marketplace.ui.theme.MarketPlaceTheme
 

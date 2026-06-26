@@ -35,10 +35,10 @@ import com.puneet.marketplace.util.toCategoryLabel
 
 @Composable
 fun FlashDealProductCard(
+    modifier: Modifier = Modifier,
     product: Product,
     countdown: CountdownState,
     isJoined: Boolean = false,
-    modifier: Modifier = Modifier,
     onClick: () -> Unit = {},
 ) {
     Card(
