@@ -55,7 +55,7 @@ class ProductViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 refreshProductsUseCase()
-                _uiState.update { it.copy(error = null) }
+                _uiState.update { it.copy(isLoading = false, error = null) }
             } catch (e: Exception) {
                 _uiState.update {
                     it.copy(
@@ -100,7 +100,6 @@ class ProductViewModel @Inject constructor(
                 .collect { products ->
                     _uiState.update {
                         it.copy(
-                            isLoading = false,
                             products = products,
                             error = if (products.isNotEmpty()) null else it.error,
                         )

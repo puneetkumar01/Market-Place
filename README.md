@@ -23,6 +23,7 @@ A modern Android marketplace app built with Jetpack Compose. It showcases a prod
 - **Background work:** WorkManager (with Hilt integration)
 - **Async:** Kotlin Coroutines + Flow
 - **Images:** Coil
+- **Testing:** JUnit4, MockK, Coroutines Test, Room in-memory database, AndroidX Test
 
 ## Architecture
 
@@ -82,6 +83,37 @@ User interactions are recorded locally first, then uploaded in batches by a back
 - `FlashDealCountdownManager` — shared countdown state for flash deals.
 - `AnalyticsUploadWorker` — uploads pending product action logs in batches and retries on failure.
 
+## Testing
+
+The project includes both JVM unit tests and on-device instrumentation tests.
+
+### Unit tests (`app/src/test`)
+
+Fast JVM tests that mock collaborators with [MockK] and drive coroutines with a `MainDispatcherRule` + `kotlinx-coroutines-test`. Shared fixtures live in `TestData.kt`.
+
+- `ProductRepositoryImplTest` — verifies network refresh maps DTOs to entities, derives category thumbnails, prefetches images, and exposes Room data as domain models.
+- `ProductActionLogRepositoryImplTest` — logging, querying, and clearing of product action logs.
+- `ProductViewModelTest`, `ProductDetailViewModelTest`, `FlashDealsViewModelTest` — UI state emissions and user-action handling.
+
+### Instrumentation tests (`app/src/androidTest`)
+
+Room DAO tests that run against an in-memory database on an emulator/device.
+
+- `ProductDaoTest` — product queries (catalog vs. flash deals, category filtering), upsert-on-conflict, and the `List<String>` type converter round-trip.
+- `CategoryDaoTest`, `ProductActionLogDaoTest` — category and action-log persistence.
+
+### Running tests
+
+```bash
+# Unit tests (JVM)
+./gradlew testDebugUnitTest
+
+# Instrumentation tests (requires a connected device/emulator)
+./gradlew connectedDebugAndroidTest
+```
+
+[MockK]: https://mockk.io/
+
 ## Data Sources
 
 - **Products & categories:** [DummyJSON](https://dummyjson.com/) (`https://dummyjson.com/`)
@@ -120,4 +152,7 @@ app/src/main/java/com/puneet/marketplace/
 ├── ui/theme/         Compose theme and colors
 ├── util/             Extensions and helpers
 └── MainActivity.kt
+
+app/src/test/    JVM unit tests (repositories, ViewModels) — MockK + coroutines-test
+app/src/androidTest/    Instrumentation tests (Room DAOs) — in-memory database
 ```
